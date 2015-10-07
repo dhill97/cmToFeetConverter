@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace cenitimeterToFeetConverter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Tell the user what to do
+            Console.WriteLine("Please enter the centimeters you want converted!");
+            //Declare the Variables "myCentimeters, myFeet, myInches, and y."
+            string myCentimeters;
+            double myFeet;
+            double myInches;
+            double y;
+            //Set variable y to 2.54
+            y = 2.54;
+            //Let the user to enter a value.
+            myCentimeters = Console.ReadLine();
+            //Convert centimeters to inches
+            myInches = (Convert.ToInt32(myCentimeters)) / y;
+            //Divide Inches by 12 to get feet
+            myFeet = Math.Floor(myInches / 12);
+            //Subtract the whole number feet and multiply by 12 to get the remaining inches
+            myInches -= (myFeet * 12);
+            //Output the Feet and Inches to the screen.
+            Console.WriteLine("{0} feet" + " {1} inches", myFeet, myInches);
+            //Let it stay in the window to read the Console.WriteLine.
+            Console.ReadLine();
+
+
+        }
+    }
+}
